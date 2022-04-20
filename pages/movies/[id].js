@@ -3,6 +3,8 @@ import Image from 'next/image';
 import dbConnect from '../../lib/dbConnect';
 import Movie from '../../models/movie';
 
+import styles from './moviepage.module.css';
+
 export async function getServerSideProps(context) {
   const movieId = context.query.id;
   await dbConnect();
@@ -20,11 +22,11 @@ export async function getServerSideProps(context) {
 
 const MoviePage = ({ movie }) => {
   return (
-    <div>
+    <div className={styles.container}>
       <div>Reviews Section</div>
-      <Image alt='cover image' src={movie.imgUrl} width={120} height={190} />
+      <Image alt='cover image' src={movie.imgUrl} width={240} height={380} />
       <div>
-        <h3>{movie.title}</h3>
+        <h1 className={styles.title}>{movie.title}</h1>
         <p>{movie.description}</p>
       </div>
       <div>Screenings Secrtion</div>
