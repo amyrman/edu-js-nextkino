@@ -28,15 +28,44 @@ export const getServerSideProps = async (context) => {
 const MoviePage = ({ movie }) => {
   return (
     <div className={styles.container}>
-      <div>Reviews Section</div>
+      <div>
+        Reviews Section
+        <ul>
+          {movie.reviews.map((review) => {
+            return (
+              <li key={review.comment}>
+                <p>{review.date}</p>
+                <p>{review.comment}</p>
+                <p>{review.rating}</p>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
       <Image alt='cover image' src={movie.imgUrl} width={240} height={380} />
       <div>
         <h1 className={styles.title}>{movie.title}</h1>
         <p>{movie.description}</p>
       </div>
-      <div>Screenings Secrtion</div>
+      <div>
+        Kommande visningar
+        <ul>
+          {movie.screenings.map((screening) => {
+            return (
+              <li key={screening.date}>
+                <p>{screening.date}</p>
+                <p>{screening.time}</p>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </div>
   );
 };
 
 export default MoviePage;
+
+/*
+  Link screenings to booking with Link
+*/
