@@ -1,5 +1,5 @@
 import dbConnect from '../../../lib/dbConnect';
-import movie from '../../models/movie';
+import Movie from '../../models/movie';
 
 export default async function handler(req, res) {
   const { method } = req;
@@ -9,7 +9,7 @@ export default async function handler(req, res) {
   switch (method) {
     case 'GET':
       try {
-        const movies = await movie.find(
+        const movies = await Movie.find(
           {}
         ); /* find all the data in our database */
         res.status(200).json({ success: true, data: movies });
@@ -19,7 +19,7 @@ export default async function handler(req, res) {
       break;
     case 'POST':
       try {
-        const movie = await movie.create(
+        const movie = await Movie.create(
           req.body
         ); /* create a new model in the database */
         res.status(201).json({ success: true, data: movie });

@@ -1,6 +1,5 @@
 import mongoose from 'mongoose';
 
-/* PetSchema will correspond to a collection in your MongoDB database. */
 const MovieSchema = new mongoose.Schema({
   id: String,
   title: String,
