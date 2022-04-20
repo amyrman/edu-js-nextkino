@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import dbConnect from '../../lib/dbConnect';
 import Movie from '../../models/movie';
 
@@ -17,13 +19,15 @@ export async function getServerSideProps(context) {
 }
 
 const MoviePage = ({ movie }) => {
-  console.log(movie);
   return (
     <div>
-      <div>Movie Page</div>
-      <ul>
-        <li key={movie.id}>{movie.title}</li>
-      </ul>
+      <div>Reviews Section</div>
+      <Image alt='cover image' src={movie.imgUrl} width={120} height={190} />
+      <div>
+        <h3>{movie.title}</h3>
+        <p>{movie.description}</p>
+      </div>
+      <div>Screenings Secrtion</div>
     </div>
   );
 };
