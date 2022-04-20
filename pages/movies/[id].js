@@ -5,7 +5,7 @@ import Movie from '../../models/movie';
 
 import styles from './moviepage.module.css';
 
-export async function getServerSideProps(context) {
+export const getServerSideProps = async (context) => {
   const movieId = context.query.id;
   await dbConnect();
 
@@ -16,9 +16,14 @@ export async function getServerSideProps(context) {
     movieData._id = movieData._id.toString();
     return movieData;
   });
-
-  return { props: { movie: movie[0] } };
-}
+  if (movie.length === 0) {
+    return {
+      notFound: true,
+    };
+  } else {
+    return { props: { movie: movie[0] } };
+  }
+};
 
 const MoviePage = ({ movie }) => {
   return (
