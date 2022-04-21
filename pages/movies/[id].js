@@ -2,6 +2,7 @@ import Image from 'next/image';
 
 import dbConnect from '../../lib/dbConnect';
 import Movie from '../../models/movie';
+import Reviews from '../../components/Reviews';
 
 import styles from './moviepage.module.css';
 
@@ -30,17 +31,7 @@ const MoviePage = ({ movie }) => {
     <div className={styles.container}>
       <div>
         Reviews Section
-        <ul>
-          {movie.reviews.map((review) => {
-            return (
-              <li key={review.comment}>
-                <p>{review.date}</p>
-                <p>{review.comment}</p>
-                <p>{review.rating}</p>
-              </li>
-            );
-          })}
-        </ul>
+        <Reviews reviews={movie.reviews} />
       </div>
       <Image alt='cover image' src={movie.imgUrl} width={240} height={380} />
       <div>
@@ -68,4 +59,5 @@ export default MoviePage;
 
 /*
   Link screenings to booking with Link
+  getInitialProps for Reviews? cant seem to pass props as props to child comp
 */
