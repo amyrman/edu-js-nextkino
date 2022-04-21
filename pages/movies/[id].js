@@ -29,10 +29,7 @@ export const getServerSideProps = async (context) => {
 const MoviePage = ({ movie }) => {
   return (
     <div className={styles.container}>
-      <div>
-        Reviews Section
-        <Reviews reviews={movie.reviews} />
-      </div>
+      <Reviews reviews={movie.reviews} />
       <Image alt='cover image' src={movie.imgUrl} width={240} height={380} />
       <div>
         <h1 className={styles.title}>{movie.title}</h1>
@@ -59,5 +56,5 @@ export default MoviePage;
 
 /*
   Link screenings to booking with Link
-  getInitialProps for Reviews? cant seem to pass props as props to child comp
+  Add styling, padding removed
 */

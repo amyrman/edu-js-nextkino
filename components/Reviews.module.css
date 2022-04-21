@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.reviews {
+  list-style: none;
+  padding: 0;
+}
+
+.review {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.review p {
+  margin: 0;
+}
+
+.comment {
+  font-style: italic;
+}
+
+.rating {
+  font-weight: 700;
+}
