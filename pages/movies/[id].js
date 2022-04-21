@@ -31,10 +31,11 @@ const MoviePage = ({ movie }) => {
   return (
     <div className={styles.container}>
       <Reviews reviews={movie.reviews} />
+
       <Image alt='cover image' src={movie.imgUrl} width={240} height={380} />
-      <div>
+      <div className={styles.info}>
         <h1 className={styles.title}>{movie.title}</h1>
-        <p>{movie.description}</p>
+        <p className={styles.description}>{movie.description}</p>
       </div>
       <Screenings screenings={movie.screenings} />
     </div>
@@ -45,5 +46,4 @@ export default MoviePage;
 
 /*
   Link screenings to booking with Link
-  Add styling, padding removed
 */

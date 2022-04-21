@@ -3,6 +3,8 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  width: 17vw;
+  padding-left: 1rem;
 }
 
 .screenings {
@@ -24,5 +26,5 @@
 }
 
 .date {
-  font-weight: 700;
+  font-weight: 600;
 }

@@ -21,6 +21,7 @@ const Screenings = ({ screenings }) => {
     return (
       <div>
         <h4>Visningar</h4>
+        <p>Inga visningar</p>
       </div>
     );
   }
