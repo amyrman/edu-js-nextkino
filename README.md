@@ -6,6 +6,32 @@ Inside the /lib directory you will find dbConnect.js. Use this to establish a co
 
 > Awaiting the connection and then doing a query to find a movie with a specific id
 
+## Schema/Models
+
+###### Movie
+
+```
+const MovieSchema = new mongoose.Schema({
+  id: String,
+  title: String,
+  description: String,
+  imgUrl: String,
+  screenings: [
+    {
+      date: String,
+      time: String,
+    },
+  ],
+  reviews: [
+    {
+      date: String,
+      comment: String,
+      rating: String,
+    },
+  ],
+});
+```
+
 ## Movie page
 
 Dynamic routes is used for selected Movie page.
