@@ -3,6 +3,7 @@ import Image from 'next/image';
 import dbConnect from '../../lib/dbConnect';
 import Movie from '../../models/movie';
 import Reviews from '../../components/Reviews';
+import Screenings from '../../components/Screenings';
 
 import styles from './moviepage.module.css';
 
@@ -35,19 +36,7 @@ const MoviePage = ({ movie }) => {
         <h1 className={styles.title}>{movie.title}</h1>
         <p>{movie.description}</p>
       </div>
-      <div>
-        Kommande visningar
-        <ul>
-          {movie.screenings.map((screening) => {
-            return (
-              <li key={screening.date}>
-                <p>{screening.date}</p>
-                <p>{screening.time}</p>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+      <Screenings screenings={movie.screenings} />
     </div>
   );
 };
