@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Noto+Serif&family=Shadows+Into+Light&family=Square+Peg&family=Whisper&display=swap");
 
 body {
-  background-image: url("../pictures/background.jpg");
+  background-image: url("../public/pictures/background.jpg");
   color: rgb(102, 172, 166);
   font-family: "Playfair Display";
 }
