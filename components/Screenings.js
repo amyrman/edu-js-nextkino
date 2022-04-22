@@ -4,7 +4,7 @@ const Screenings = ({ screenings }) => {
   if (screenings.length > 0) {
     return (
       <div className={styles.container}>
-        <h4>Visningar</h4>
+        <h4>Screenings</h4>
         <ul className={styles.screenings}>
           {screenings.map((screening) => {
             return (
@@ -20,8 +20,8 @@ const Screenings = ({ screenings }) => {
   } else {
     return (
       <div>
-        <h4>Visningar</h4>
-        <p>Inga visningar</p>
+        <h4>Screenings</h4>
+        <p>No screenings atm...</p>
       </div>
     );
   }

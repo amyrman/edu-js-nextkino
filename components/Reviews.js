@@ -4,7 +4,7 @@ const Reviews = ({ reviews }) => {
   if (reviews.length > 0) {
     return (
       <div className={styles.container}>
-        <h4>Recensioner</h4>
+        <h4>Reviews</h4>
         <ul className={styles.reviews}>
           {reviews.map((review) => {
             return (
@@ -21,8 +21,8 @@ const Reviews = ({ reviews }) => {
   } else {
     return (
       <div className={styles.container}>
-        <h4>Recensioner</h4>
-        <p>Inga recensioner</p>
+        <h4>Reviews</h4>
+        <p>No reviews atm...</p>
       </div>
     );
   }
