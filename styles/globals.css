@@ -11,6 +11,20 @@ body {
   margin: 10px auto;
 }
 
+.login a{
+  padding: 5px 30px;
+  display: flex;
+  justify-content: flex-end;
+  color: rgb(144, 243, 221);
+  text-shadow: 1px 1px 2px rgb(15, 37, 37), 0 0 1em;
+  font-size: 20px;
+}
+
+.login a:hover{
+  color: rgb(20, 245, 196);
+  text-shadow: 1px 1px 2px rgb(159, 252, 232), 0 0 2em; 
+}
+
 nav {
   margin: 10px auto 80px;
   padding: 10px 0;
