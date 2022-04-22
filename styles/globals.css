@@ -25,23 +25,21 @@ body {
   text-shadow: 1px 1px 2px rgb(159, 252, 232), 0 0 2em; 
 }
 
-nav {
-  margin: 10px auto 80px;
-  padding: 10px 0;
-  box-shadow: 1px 1px 5px rgb(110, 160, 161);
-  border-bottom: 1px solid rgb(110, 160, 161);
-}
 
-nav .logo {
-  margin-right: 10px;
-  margin-top: -60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Beau Rivage";
-  font-size: 70px;
-  text-shadow: 1px 1px 2px rgb(9, 51, 63), 0 0 1em;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .links {
   display: flex;
