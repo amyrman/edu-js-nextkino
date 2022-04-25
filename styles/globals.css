@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Noto+Serif&family=Shadows+Into+Light&family=Square+Peg&family=Whisper&display=swap");
 
 body {
-  background-image: url("../pictures/background.jpg");
+  background-image: url("../public/pictures/background.jpg");
   color: rgb(102, 172, 166);
   font-family: "Playfair Display";
 }
@@ -11,22 +11,18 @@ body {
   margin: 10px auto;
 }
 
-nav {
-  margin: 10px auto 80px;
-  padding: 10px 0;
-  box-shadow: 1px 1px 5px rgb(110, 160, 161);
-  border-bottom: 1px solid rgb(110, 160, 161);
+.login a{
+  padding: 5px 30px;
+  display: flex;
+  justify-content: flex-end;
+  color: rgb(144, 243, 221);
+  text-shadow: 1px 1px 2px rgb(15, 37, 37), 0 0 1em;
+  font-size: 20px;
 }
 
-nav .logo {
-  margin-right: 10px;
-  margin-top: -60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Beau Rivage";
-  font-size: 70px;
-  text-shadow: 1px 1px 2px rgb(9, 51, 63), 0 0 1em;
+.login a:hover{
+  color: rgb(20, 245, 196);
+  text-shadow: 1px 1px 2px rgb(159, 252, 232), 0 0 2em; 
 }
 
 .links {
