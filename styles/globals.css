@@ -52,3 +52,18 @@ footer{
   border-top: 1px solid rgb(110, 160, 161);
   box-shadow: 1px 1px 5px rgb(110, 160, 161);
 }
+
+.NotFound{
+  color: white;
+  text-align: center;
+}
+
+.NotFound a{
+  font-size: 20px;
+  color: rgb(144, 243, 221);
+}
+
+.NotFound a:hover{
+  color: rgb(20, 245, 196);
+  text-shadow: 1px 1px 2px rgb(159, 252, 232), 0 0 2em;  
+}
