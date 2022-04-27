@@ -37,3 +37,24 @@ const MovieSchema = new mongoose.Schema({
 Dynamic routes is used for selected Movie page. SSR for on request based fetching of data from database
 
 _/movies/:id_
+
+```
+{
+    "success": true,
+    "data": [
+        {
+            "username": "Thor",
+            "email": "thor@mail.se",
+            "bookings": [
+                {
+                    "movieId": "1",
+                    "date": "2022-05-01",
+                    "time": "19:00",
+                    "screeningsId": "1_1"
+                }
+            ],
+            "__v": 0
+        }
+    ]
+}
+```
