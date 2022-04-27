@@ -19,11 +19,21 @@ const BookingForm = ({ bookingInfo, numTickets }) => {
     setEmail(event.target.value);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     // Temoprery payment method
     if (pay == true && paymentAmount == bookingInfo.price) {
       console.log(booking);
+      // Api route to DB
+      await fetch(`/api/bookings/${bookingInfo.screeningId}`, {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({
+          booking,
+        }),
+      });
     } else {
       // Payment error here
       //
