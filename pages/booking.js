@@ -11,6 +11,7 @@ export default function Booking() {
   const [numTickets, setNumTickets] = useState(2);
   const router = useRouter();
   const bookingInfo = {
+    screeningId: 1337,
     numTickets: numTickets,
     movie: "Spiderman XVII",
     date: "31/13",
