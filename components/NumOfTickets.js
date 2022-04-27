@@ -14,9 +14,12 @@ const NumOfTickets = ({ handleNumTickets, numTickets }) => {
 
   return (
     <div className={styles.container}>
-      <button onClick={onClickFewer}>&#10094;</button>
-      <p> {numTickets}</p>
-      <button onClick={onClickMore}>&#10095;</button>
+      <p>Number of tickets:</p>
+      <div className={styles.tickets}>
+        <button onClick={onClickFewer}>&#10094;</button>
+        <p> {numTickets}</p>
+        <button onClick={onClickMore}>&#10095;</button>
+      </div>
     </div>
   );
 };

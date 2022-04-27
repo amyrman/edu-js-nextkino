@@ -6,10 +6,13 @@ import NumOfTickets from "../components/NumOfTickets";
 import PaymentModule from "../components/PaymentModule";
 import Seating from "../components/Seating";
 import StickyBooking from "../components/StickyBooking";
+import styles from "../styles/booking.module.css";
 
 export default function Booking() {
   const [numTickets, setNumTickets] = useState(2);
   const router = useRouter();
+
+  // Mockinfo
   const bookingInfo = {
     screeningId: 1337,
     numTickets: numTickets,
@@ -24,12 +27,12 @@ export default function Booking() {
   };
 
   return (
-    <div style={{ textAlign: "center" }}>
+    <div className={styles.container}>
       <h1>Booking!</h1>
-      <button onClick={() => router.back()}>
-        <small> &#10094;back</small>
-      </button>
       <div>
+        <button className={styles.backBtn} onClick={() => router.back()}>
+          <small> &#10094;back</small>
+        </button>
         <NumOfTickets
           handleNumTickets={handleNumTickets}
           numTickets={numTickets}
@@ -37,8 +40,8 @@ export default function Booking() {
         <Seating />
         <BookingForm bookingInfo={bookingInfo} />
         <PaymentModule />
-        <StickyBooking bookingInfo={bookingInfo} numTickets={numTickets} />
       </div>
+      <StickyBooking bookingInfo={bookingInfo} numTickets={numTickets} />
     </div>
   );
 }

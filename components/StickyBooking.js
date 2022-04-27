@@ -8,7 +8,7 @@ const StickyBooking = ({ bookingInfo }) => {
       </p>
       <p className={styles.movie}>{bookingInfo.movie}</p>
       <p className={styles.date}>{bookingInfo.date}</p>
-      <p className={styles.time}> time:{bookingInfo.time} </p>
+      <p className={styles.time}> Time: {bookingInfo.time} </p>
       <p className={styles.money}>{bookingInfo.price}€£$</p>
     </div>
   );

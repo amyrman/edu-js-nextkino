@@ -56,7 +56,7 @@ const BookingForm = ({ bookingInfo, numTickets }) => {
         <label>E-mail:</label>
         <input type="text" value={email} onChange={onEmailChange} />
         <div className={styles.payment}>
-          <label>Do you want to pay: </label>
+          <p>Do you want to pay: </p>
           <label>Yes</label>
           <input
             type="checkbox"
