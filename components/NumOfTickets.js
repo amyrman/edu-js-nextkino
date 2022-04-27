@@ -1,3 +1,5 @@
+import styles from "./NumOfTickets.module.css";
+
 const NumOfTickets = ({ handleNumTickets, numTickets }) => {
   const onClickFewer = () => {
     if (numTickets != 1) {
@@ -11,8 +13,8 @@ const NumOfTickets = ({ handleNumTickets, numTickets }) => {
   };
 
   return (
-    <div>
-      <button onClick={onClickFewer}> &#10094; </button>
+    <div className={styles.container}>
+      <button onClick={onClickFewer}>&#10094;</button>
       <p> {numTickets}</p>
       <button onClick={onClickMore}>&#10095;</button>
     </div>

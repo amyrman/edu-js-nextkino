@@ -1,19 +1,21 @@
 import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
+
+import BookingForm from "../components/BookingForm";
 import NumOfTickets from "../components/NumOfTickets";
+import PaymentModule from "../components/PaymentModule";
+import Seating from "../components/Seating";
+import StickyBooking from "../components/StickyBooking";
 
 export default function Booking() {
   const [numTickets, setNumTickets] = useState(2);
-
-  const handleFewTickets = () => {
-    if (numTickets != 1) {
-      setNumTickets(numTickets - 1);
-    }
-  };
-
-  const handleMoreTickets = () => {
-    if (numTickets != 8) {
-      setNumTickets(numTickets + 1);
-    }
+  const router = useRouter();
+  const bookingInfo = {
+    numTickets: numTickets,
+    movie: "Spiderman XVII",
+    date: "31/13",
+    time: "Beer-o-clock",
+    price: numTickets * 15,
   };
 
   const handleNumTickets = (newnum) => {
@@ -21,16 +23,20 @@ export default function Booking() {
   };
 
   return (
-    <div>
+    <div style={{ textAlign: "center" }}>
       <h1>Booking!</h1>
+      <button onClick={() => router.back()}>
+        <small> &#10094;back</small>
+      </button>
       <div>
-        {/* <button onClick={handleFewTickets}> &#10094; </button>
-        <p>{numTickets}</p>
-        <button onClick={handleMoreTickets}>&#10095;</button> */}
         <NumOfTickets
           handleNumTickets={handleNumTickets}
           numTickets={numTickets}
         />
+        <Seating />
+        <BookingForm bookingInfo={bookingInfo} />
+        <PaymentModule />
+        <StickyBooking bookingInfo={bookingInfo} numTickets={numTickets} />
       </div>
     </div>
   );
