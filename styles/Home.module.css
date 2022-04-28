@@ -1,4 +1,41 @@
+.About{
+background-image:linear-gradient(rgb(110, 160, 161), rgb(62, 101, 102));
+color: rgb(11, 53, 53);
+border-radius: 4px;
+height: 20rem;
+}
 
+.About h1{
+  font-size: 60px;
+  font-family: "Beau Rivage";
+  text-align: center;
+}
+
+.About p{
+  font-size: 20px;
+  text-align: center;
+}
+
+.About a{
+  text-decoration: none;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  color:black;
+  cursor: pointer;
+}
+
+.About a:hover{
+  color:rgb(28, 35, 36);
+}
+
+.quote{
+  padding: 100px 20px;
+  text-align: center;
+  font-size: 20px;
+  font-style: italic;
+  
+}
 @media (max-width: 600px) {
   .grid {
     width: 100%;
