@@ -1,13 +1,14 @@
 import Head from 'next/head'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.css'  
+import Herosection from './herosection'
 
 export default function Home() {
   return (
   <div className="HomePage">
     <div className="ImageSlider">
-      <h1>IMAGESLIDER</h1>
+      <Herosection/>
     </div>
     <div className="SelectedMovies">
       <h1>Movie tip from Kino</h1>
