@@ -38,6 +38,10 @@ Dynamic routes is used for selected Movie page. SSR for on request based fetchin
 
 _/movies/:id_
 
+## API Routes
+
+GET /api/movies
+
 ```
 {
     "success": true,
