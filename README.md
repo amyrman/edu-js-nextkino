@@ -36,11 +36,11 @@ const MovieSchema = new mongoose.Schema({
 
 Dynamic routes is used for selected Movie page. SSR for on request based fetching of data from database
 
-_/movies/:id_
+_GET /movies/:id_
 
 ## API Routes
 
-GET /api/movies
+_GET /api/movies_
 
 ```
 {
