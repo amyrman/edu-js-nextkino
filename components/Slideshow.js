@@ -53,7 +53,6 @@ const Slideshow = () => {
                     <img src={each} className={styles.img}/>
                 </div>
             ))}
-
         </Zoom>
         </div>
     )
