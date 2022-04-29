@@ -1,0 +1,31 @@
+.AboutUs{
+    display: flex;
+    color:rgb(187, 245, 242);
+    text-shadow: 1px 1px 2px rgb(19, 83, 85);
+}
+
+.AboutUsText{
+    text-align: center;
+    margin: 130px 40px;
+}
+
+.AboutUsText h2{
+    font-size: 30px;
+}
+
+.AboutUsText p{
+    font-size: 20px;
+    padding: 0px 100px;
+}
+
+.AboutUsImages{
+    margin-right: 300px;
+}
+
+.SalonImage{
+  
+}
+
+.MarsImage{
+
+}
