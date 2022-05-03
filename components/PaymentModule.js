@@ -2,7 +2,8 @@ import styles from "./PaymentModule.module.css";
 const PaymentModule = () => {
   return (
     <div className={styles.container}>
-      <p>Payment Module</p>
+      <p></p>
+      {/* Here be paying module */}
     </div>
   );
 };
