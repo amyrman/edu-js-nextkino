@@ -1,0 +1,27 @@
+.container {
+width: 35vh;
+margin: 0 auto;
+}
+
+.form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 25vh;
+}
+
+.form button {
+  margin-top: 0.5em;
+  padding: 0.25em;
+  width: 50px;
+}
+
+.payment {
+  margin: 0.6em;
+}
+
+.payment > p {
+  margin: 0.25rem;
+}
