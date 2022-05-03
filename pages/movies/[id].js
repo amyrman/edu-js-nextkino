@@ -43,7 +43,3 @@ const MoviePage = ({ movie }) => {
 };
 
 export default MoviePage;
-
-/*
-  Link screenings to booking with Link
-*/
