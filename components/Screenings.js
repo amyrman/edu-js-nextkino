@@ -11,7 +11,12 @@ const Screenings = ({ screenings }) => {
           {screenings.map((screening) => {
             return (
               <li className={styles.screening} key={screening.date}>
-                <Link href={`/booking/${screening.id}`}>
+                <Link
+                  href={{
+                    pathname: '/booking',
+                    query: { screeningId: screening.id },
+                  }}
+                >
                   <a>
                     <p className={styles.date}>{screening.date}</p>
                     <p className={styles.time}>{screening.time}</p>
