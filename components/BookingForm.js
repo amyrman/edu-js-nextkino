@@ -1,6 +1,7 @@
 import styles from "./BookingForm.module.css";
 import { useState } from "react";
-const BookingForm = ({ bookingInfo, numTickets }) => {
+
+const BookingForm = ({ bookingInfo, setBookingState }) => {
   const [name, setName] = useState("");
   const [phonenumber, setPhonenumber] = useState("");
   const [email, setEmail] = useState("");
@@ -21,22 +22,27 @@ const BookingForm = ({ bookingInfo, numTickets }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // Temoprery payment method
-    if (pay == true && paymentAmount == bookingInfo.price) {
-      console.log(booking);
-      // Api route to DB
-      await fetch(`/api/bookings/${bookingInfo.screeningId}`, {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify({
-          booking,
-        }),
-      });
-    } else {
-      // Payment error here
-      //
+    try {
+      // Temporery payment method
+      if (pay == true && paymentAmount == bookingInfo.price) {
+        console.log(booking);
+        // Api route to DB
+        await fetch(`/api/bookings/${bookingInfo.screeningId}`, {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify({
+            booking,
+          }),
+        });
+        setBookingState("completed");
+      } else {
+        // Payment error here
+        //
+      }
+    } catch (err) {
+      console.log(err);
     }
   };
   const booking = {
