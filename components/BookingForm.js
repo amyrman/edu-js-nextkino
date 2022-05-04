@@ -15,7 +15,7 @@ const BookingForm = ({ screening, setBookingState, numTickets }) => {
       if (pay == true && paymentAmount == numTickets * 15) {
         // Api route to DB
         await fetch(`/api/bookings/${screening.screeningId}`, {
-          method: "POST",
+          method: "PATCH",
           headers: {
             "Content-type": "application/json",
           },
