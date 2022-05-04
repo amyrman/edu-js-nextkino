@@ -13,24 +13,21 @@ export const getServerSideProps = async (context) => {
   const value = Object.values(context.query);
   const key = Object.keys(context.query);
   const URL = `http://localhost:3000/api/bookings/${value}`;
-  // if object key = screeningid && value exist=
+
   if (key == "screeningId") {
     try {
       const res = await fetch(URL);
-      const res2 = await res.json();
-      const screening = res2[0];
-
+      const screening = await res.json();
       return {
         props: { screening },
       };
     } catch (err) {
       console.log(err);
     }
-  } else {
-    return {
-      props: { screening: null },
-    };
   }
+  return {
+    props: { screening: null },
+  };
 };
 
 export default function Booking({ screening }) {
@@ -87,10 +84,6 @@ export default function Booking({ screening }) {
       <div className={styles.container}>
         <h2>No screenning info found</h2>
         <BackBtn />
-        {/* Temporery */}
-        <button onClick={() => setBookingState(true)}>
-          <p>Bokning med screening ID</p>
-        </button>
       </div>
     );
   }
