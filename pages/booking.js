@@ -17,12 +17,16 @@ export const getServerSideProps = async (context) => {
   if (key == "screeningId") {
     try {
       const res = await fetch(URL);
-      const screening = await res.json();
-      return {
-        props: { screening },
-      };
+      if (res.status == 200) {
+        const screening = await res.json();
+        if (screening) {
+          return {
+            props: { screening },
+          };
+        }
+      }
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   }
   return {
