@@ -1,5 +1,6 @@
 import dbConnect from '../lib/dbConnect';
 import Movie from '../models/movie';
+import Image from 'next/image'
 
 import styles from './movies.module.css';
 
@@ -8,7 +9,13 @@ const MoviesPage = ({ movies }) => (
     {movies.map((movie) => (
       <div key={movie._id}>
         <div>
-          <img src={movie.imgUrl} />
+          <Image
+          src={movie.imgUrl}
+          alt="movie picture"
+          width={500}
+          height={500}
+          />
+          {/* <img src={movie.imgUrl} /> */}
         </div>
       </div>
     ))}
