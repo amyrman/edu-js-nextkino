@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+// import { useRouter } from "next/router";
 
 import BookingForm from "../components/BookingForm";
 import NumOfTickets from "../components/NumOfTickets";
@@ -8,7 +9,31 @@ import StickyBooking from "../components/StickyBooking";
 import styles from "../styles/Booking.module.css";
 import BackBtn from "../components/BackBtn";
 
-export default function Booking() {
+export const getServerSideProps = async (context) => {
+  const value = Object.values(context.query);
+  const key = Object.keys(context.query);
+  const URL = `http://localhost:3000/api/bookings/${value}`;
+  // if object key = screeningid && value exist=
+  if (key == "screeningId") {
+    try {
+      const res = await fetch(URL);
+      const res2 = await res.json();
+      const screening = res2[0];
+
+      return {
+        props: { screening },
+      };
+    } catch (err) {
+      console.log(err);
+    }
+  } else {
+    return {
+      props: { screening: null },
+    };
+  }
+};
+
+export default function Booking({ screening }) {
   // Bookingpage has to have a screeningId to start
   //
   const [bookingState, setBookingState] = useState(false);
@@ -20,24 +45,16 @@ export default function Booking() {
 
   const handleBookingState = (state) => {
     setBookingState(state);
-  };
-
-  // Mockinfo
-  const bookingInfo = {
-    screeningId: 1337,
-    numTickets: numTickets,
-    movie: "Spiderman XVII",
-    date: "31/13",
-    time: "Beer-o-clock",
-    price: numTickets * 15,
+    console.log(state);
   };
 
   // Change to check for valid screening ID
   //
-  if (bookingState == true) {
+  if (screening && bookingState != "completed") {
     return (
       <div className={styles.container}>
         <h1>Booking!</h1>
+        <h2>{screening.title}</h2>
         <div>
           <BackBtn />
           <NumOfTickets
@@ -46,17 +63,18 @@ export default function Booking() {
           />
           <Seating />
           <BookingForm
-            bookingInfo={bookingInfo}
+            screening={screening}
             setBookingState={handleBookingState}
+            numTickets={numTickets}
           />
           <PaymentModule />
         </div>
-        <StickyBooking bookingInfo={bookingInfo} numTickets={numTickets} />
+        <StickyBooking screening={screening} numTickets={numTickets} />
       </div>
     );
     // Completed booking
     //
-  } else if (bookingState == "completed") {
+  } else if (screening && bookingState == "completed") {
     return (
       <div className={styles.container}>
         <h2> Booking completed</h2>
