@@ -15,7 +15,6 @@ const MoviesPage = ({ movies }) => (
           width={500}
           height={500}
           />
-          {/* <img src={movie.imgUrl} /> */}
         </div>
       </div>
     ))}
