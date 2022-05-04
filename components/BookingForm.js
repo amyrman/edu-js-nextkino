@@ -1,33 +1,20 @@
-import styles from "./BookingForm.module.css";
 import { useState } from "react";
+import styles from "./BookingForm.module.css";
 
-const BookingForm = ({ bookingInfo, setBookingState }) => {
+const BookingForm = ({ screening, setBookingState, numTickets }) => {
   const [name, setName] = useState("");
   const [phonenumber, setPhonenumber] = useState("");
   const [email, setEmail] = useState("");
   const [pay, setPay] = useState(false);
   const [paymentAmount, setPaymentAmount] = useState(0);
 
-  const onNameChange = (event) => {
-    setName(event.target.value);
-  };
-
-  const onPhonenumberChange = (event) => {
-    setPhonenumber(event.target.value);
-  };
-
-  const onEmailChange = (event) => {
-    setEmail(event.target.value);
-  };
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
       // Temporery payment method
-      if (pay == true && paymentAmount == bookingInfo.price) {
-        console.log(booking);
+      if (pay == true && paymentAmount == numTickets * 15) {
         // Api route to DB
-        await fetch(`/api/bookings/${bookingInfo.screeningId}`, {
+        await fetch(`/api/bookings/${screening.screeningId}`, {
           method: "POST",
           headers: {
             "Content-type": "application/json",
@@ -45,22 +32,36 @@ const BookingForm = ({ bookingInfo, setBookingState }) => {
       console.log(err);
     }
   };
+  // This is only used for development
+  // --->
   const booking = {
-    name: name,
-    phonenumber: phonenumber,
-    email: email,
-    ...bookingInfo,
+    ...screening,
+    booking: { name: name, phonenumber: phonenumber, email: email },
   };
+  // <--
+  //
 
   return (
     <div className={styles.container}>
       <form className={styles.form} onSubmit={handleSubmit}>
         <label>Name:</label>
-        <input type="text" value={name} onChange={onNameChange} />
+        <input
+          type="text"
+          value={name}
+          onChange={(ev) => setName(ev.target.value)}
+        />
         <label>Phonenumber:</label>
-        <input type="text" value={phonenumber} onChange={onPhonenumberChange} />
+        <input
+          type="text"
+          value={phonenumber}
+          onChange={(ev) => setPhonenumber(ev.target.value)}
+        />
         <label>E-mail:</label>
-        <input type="text" value={email} onChange={onEmailChange} />
+        <input
+          type="text"
+          value={email}
+          onChange={(ev) => setEmail(ev.target.value)}
+        />
         <div className={styles.payment}>
           <p>Do you want to pay: </p>
           <label>Yes</label>
