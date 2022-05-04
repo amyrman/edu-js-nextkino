@@ -12,25 +12,23 @@ const loginInfo = async (req, res) => {
     case "GET":
       try {
         const users = await User.find();
-        console.log(users);
         res.status(200).json({ success: true, data: users });
       } catch (error) {
-        res.status(400).json({ success: false });
+        res.status(405).json({ success: false });
       }
       break;
 
     case "POST":
       try {
-        //const cookies = new Cookies(req,res);
         const user = await User.find(infoUser);
-        console.log(user);
-        if(user.length < 1){
-          res.status(400).json({ success: false });
+        if (!user.length < 1) {
+          const cookies = new Cookies(req, res);
+          cookies.set("loggedin", "yes");
+          res.status(200).json({ success: true, data: user });
         }
-      //   cookies.set("loggedin", "yesss");
-        res.status(200).json({ success: true, data: user });
-      } catch (error) {
         res.status(400).json({ success: false });
+      } catch (error) {
+        res.status(405).json({ success: false });
       }
   }
 };
