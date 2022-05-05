@@ -23,7 +23,12 @@ const loginInfo = async (req, res) => {
         const user = await User.find(infoUser);
         if (!user.length < 1) {
           const cookies = new Cookies(req, res);
-          cookies.set("loggedin", "yes");
+          cookies.set("session", JSON.stringify ({
+            username:username,
+            loggedin:true,
+
+          })
+          );
           res.status(200).json({ success: true, data: user });
         }
         res.status(400).json({ success: false });
