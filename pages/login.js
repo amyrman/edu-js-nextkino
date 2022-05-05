@@ -1,21 +1,40 @@
 import React, { useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Login = () => {
+
+  const router = useRouter()
+
+  const forSubmit = () => {
+    router.push('/user')
+  }
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = async (ev) => {
     ev.preventDefault();
-    await fetch("/api/users", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        username:username,
-        password:password,
-      }),
-    });
+    
+    try {
+      await fetch("/api/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username: username,
+          password: password,
+        }),
+      });
+    } catch {
+    } finally {
+      if(forSubmit()){
+        console.log(forSubmit());
+      }else{
+        ev.preventDefault();
+      }
+
+    }
   };
 
   return (
@@ -28,6 +47,7 @@ const Login = () => {
             type="text"
             value={username}
             onChange={(ev) => setUsername(ev.target.value)}
+            required
           />
         </label>
         <label>
@@ -36,9 +56,14 @@ const Login = () => {
             type="password"
             value={password}
             onChange={(ev) => setPassword(ev.target.value)}
+            required
           />
         </label>
-        <input type="submit" />
+        <label>
+          <button type="submit">
+             Login
+          </button>
+        </label>
       </form>
     </div>
   );
