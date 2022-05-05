@@ -18,33 +18,39 @@ import Link from "next/link";
 export default function MoviesPage({ movies }) {
   return (
     <>
-      {movies.map((movie) => (
-        <div key={movie._id}>
-          <Card sx={{ maxWidth: 345 }}>
-            <CardActionArea>
-              <CardMedia
-                component="img"
-                height="fit-content"
-                image={movie.imgUrl}
-                alt="movie picture"
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                  Movie title
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  Description
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-            <CardActions>
-              <Button size="small" color="primary">
-                Book this movie
-              </Button>
-            </CardActions>
-          </Card>
-        </div>
-      ))}
+      <Grid container spacing={2}>
+        {movies.map((movie) => (
+          <div key={movie._id}>
+            {/* <Box sx={{ flexGrow: 1 }}> */}
+            <Grid item xs={10}>
+              <Card sx={{ maxWidth: 225 }}>
+                <CardActionArea href={`/movies/${encodeURIComponent(movie.id)}`}>
+                  <CardMedia
+                    component="img"
+                    height="275"
+                    image={movie.imgUrl}
+                    alt="movie picture"
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                      {movie.title}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      {movie.description}
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+                <CardActions>
+                  <Button size="small" color="primary">
+                    Book this movie
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+            {/* </Box> */}
+          </div>
+        ))}
+      </Grid>
     </>
   );
 }
