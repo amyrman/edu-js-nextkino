@@ -1,18 +1,14 @@
 import * as React from "react";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import { Button, CardActionArea, CardActions } from "@mui/material";
+import { Card, CardContent, CardMedia, Typography, Button, CardActionArea, CardActions} from "@mui/material";
 import dbConnect from "../lib/dbConnect";
 import Movie from "../models/movie";
 import Link from "next/link";
 
 /* TODO:
-- Import MUI grid
+- Import MUI grid - DOING
 - Link cards to correct movie page:
   - href={`/movies/${encodeURIComponent(movie.id)}
-  - unsure if links should be used in some special way when combining Next + MUI
+  - unsure if links should be used in some special way when combining Next + MUI per https://mui.com/material-ui/guides/routing/#more-examples
 
 - Display description and title from db:
   - movie.description
