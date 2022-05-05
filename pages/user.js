@@ -8,7 +8,9 @@ export async function getServerSideProps(context) {
     const session = JSON.parse(sessionstr);
     if (session.loggedin == true) {
       return {
-        props: {message: `Nextjs is good`},
+        props: {
+          username: session.username,
+        },
       };
     }
   }
@@ -16,13 +18,14 @@ export async function getServerSideProps(context) {
     notFound: true,
   };
 }
-const UserPage = () => {
+const UserPage = ({ username }) => {
   return (
     <div>
-      <h1>Welcome</h1>
-      <p>User information</p>
+      <h1>You are now in the user page </h1>
+      <h2>Welcome: {username}</h2>
     </div>
   );
 };
 
 export default UserPage;
+

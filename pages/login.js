@@ -1,20 +1,18 @@
 import React, { useState } from "react";
-import Link from "next/link";
 import { useRouter } from "next/router";
 
 const Login = () => {
-
-  const router = useRouter()
+  const router = useRouter();
 
   const forSubmit = () => {
-    router.push('/user')
-  }
+    router.push("/user");
+  };
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = async (ev) => {
     ev.preventDefault();
-    
+
     try {
       await fetch("/api/users", {
         method: "POST",
@@ -28,12 +26,7 @@ const Login = () => {
       });
     } catch {
     } finally {
-      if(forSubmit()){
-        console.log(forSubmit());
-      }else{
-        ev.preventDefault();
-      }
-
+      forSubmit();
     }
   };
 
@@ -60,9 +53,7 @@ const Login = () => {
           />
         </label>
         <label>
-          <button type="submit">
-             Login
-          </button>
+          <button type="submit">Login</button>
         </label>
       </form>
     </div>
