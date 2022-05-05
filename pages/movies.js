@@ -15,14 +15,20 @@ import Movie from "../models/movie";
 import Link from "next/link";
 
 /* TODO:
-- Import MUI grid - DOING
+- Refine styling of MUI cards and grid -- symmetrical etc
+---
+DONE:
+- Display description and title from db: - DONE
+  - movie.description - DONE
+  - movie.title - DONE
+- Import MUI grid - DONE
 - Link cards to correct movie page:
-  - href={`/movies/${encodeURIComponent(movie.id)}
-  - unsure if links should be used in some special way when combining Next + MUI per https://mui.com/material-ui/guides/routing/#more-examples
+  - href={`/movies/${encodeURIComponent(movie.id)} per https://nextjs.org/docs/api-reference/next/link - DONE
 
-- Display description and title from db:
-  - movie.description
-  - movie.title
+
+- Questions...
+  - Do changes to _app.js and addition of _document.js pose any risk for merge conflicts?
+    - unsure if links should be used in some special way when combining Next + MUI per https://mui.com/material-ui/guides/routing/#more-examples
 */
 
 export default function MoviesPage({ movies }) {
