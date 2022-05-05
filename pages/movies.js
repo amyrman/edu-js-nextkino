@@ -16,6 +16,14 @@ import Link from "next/link";
 
 /* TODO:
 - Refine styling of MUI cards and grid -- symmetrical etc
+  - Center cards and 4 per row -- DONE
+  - Make cards responsive i.e. 4 per row on mobile
+  - Make description collapsible - DOING
+  - Make Title text a bit smaller
+  - Set max height for Title text
+  - Change font style to correspond with rest of site
+  - Change CardContent bg color to match site
+  - hover effect on cards to stand out
 ---
 DONE:
 - Display description and title from db: - DONE
