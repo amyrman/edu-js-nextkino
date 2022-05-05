@@ -16,14 +16,17 @@ import Link from "next/link";
 
 /* TODO:
 - Refine styling of MUI cards and grid -- symmetrical etc
-  - Center cards and 4 per row -- DONE
-  - Make cards responsive i.e. 4 per row on mobile
   - Make description collapsible - DOING
-  - Make Title text a bit smaller
-  - Set max height for Title text
+  - Set max height for Title text area
+
+
+  Optional:
+  - Make cards responsive i.e. 4 per row on mobile
   - Change font style to correspond with rest of site
   - Change CardContent bg color to match site
   - hover effect on cards to stand out
+  - Animate on hover
+  - Link Book to bookings page
 ---
 DONE:
 - Display description and title from db: - DONE
@@ -32,7 +35,9 @@ DONE:
 - Import MUI grid - DONE
 - Link cards to correct movie page:
   - href={`/movies/${encodeURIComponent(movie.id)} per https://nextjs.org/docs/api-reference/next/link - DONE
-
+- Refine styling
+  - Center cards and 4 per row -- DONE
+  - Make Title text a bit smaller -- DONE
 
 - Questions...
   - Do changes to _app.js and addition of _document.js pose any risk for merge conflicts?
