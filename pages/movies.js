@@ -1,5 +1,15 @@
 import * as React from "react";
-import { Card, CardContent, CardMedia, Typography, Button, CardActionArea, CardActions} from "@mui/material";
+import {
+  Card,
+  CardContent,
+  CardMedia,
+  Typography,
+  Button,
+  CardActionArea,
+  CardActions,
+  Box,
+  Grid,
+} from "@mui/material";
 import dbConnect from "../lib/dbConnect";
 import Movie from "../models/movie";
 import Link from "next/link";
