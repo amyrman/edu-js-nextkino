@@ -34,7 +34,7 @@ DONE:
 export default function MoviesPage({ movies }) {
   return (
     <>
-      <Grid container spacing={2}>
+      <Grid container spacing={2} style={{maxWidth: "900px", marginLeft: "auto", marginRight: "auto"}}>
         {movies.map((movie) => (
           <div key={movie._id}>
             {/* <Box sx={{ flexGrow: 1 }}> */}
