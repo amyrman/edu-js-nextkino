@@ -48,7 +48,7 @@ export default function MoviesPage({ movies }) {
                     alt="movie picture"
                   />
                   <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
+                    <Typography gutterBottom variant="h6" component="div">
                       {movie.title}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
