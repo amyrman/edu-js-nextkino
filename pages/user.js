@@ -1,23 +1,28 @@
 import Cookies from "cookies";
-
+import Iron from "@hapi/iron";
+import { ENC_KEY } from "./api/users";
 export async function getServerSideProps(context) {
   const cookies = new Cookies(context.req, context.res);
   const sessionstr = cookies.get("session");
 
   if (sessionstr) {
-    const session = JSON.parse(sessionstr);
-    if (session.loggedin == true) {
-      return {
-        props: {
-          username: session.username,
-        },
-      };
-    }
+    try {
+      const session = await Iron.unseal(sessionstr, ENC_KEY, Iron.defaults);
+      if (session.loggedIn) {
+        return {
+          props: {
+            username: session.username,
+          },
+        };
+      }
+    } catch (err) {}
   }
+
   return {
     notFound: true,
   };
 }
+
 const UserPage = ({ username }) => {
   return (
     <div>
@@ -28,4 +33,3 @@ const UserPage = ({ username }) => {
 };
 
 export default UserPage;
-
