@@ -2,11 +2,9 @@ import Iron from "@hapi/iron";
 import Cookies from "cookies";
 import dbConnect from "../../../utils/connectMongo";
 import User from "../../../models/User";
-export const ENC_KEY =
-       !process.env.ENCKEY || 'default_key_user';
-console.log(process.env.ENCKEY );
 
 dbConnect();
+export const ENC_KEY = process.env.NEXT_PUBLIC_ENV_LOCAL_VARIABLE || 'default_key_user_';
 
 const loginInfo = async (req, res) => {
   const { method } = req;
