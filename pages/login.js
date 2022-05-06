@@ -3,10 +3,6 @@ import { useRouter } from "next/router";
 
 const Login = () => {
   const router = useRouter();
-
-  const forSubmit = () => {
-    router.push("/user");
-  };
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -40,7 +36,7 @@ const Login = () => {
     <div>
       <h1>Welcome to login</h1>
       <form onSubmit={handleSubmit}>
-        <label>
+        <label className="loginUsername">
           Username
           <input
             type="text"
@@ -49,9 +45,9 @@ const Login = () => {
             required
           />
         </label>
-        <label>
+        <label className="loginPassword" >
           Password
-          <input
+          <input 
             type="password"
             value={password}
             onChange={(ev) => setPassword(ev.target.value)}
@@ -59,7 +55,7 @@ const Login = () => {
           />
         </label>
         <label>
-          <button type="submit">Login</button>
+          <button className="loginSubmit" type="submit">Login</button>
         </label>
       </form>
     </div>

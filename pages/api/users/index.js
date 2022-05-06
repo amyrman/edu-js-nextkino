@@ -4,7 +4,8 @@ import dbConnect from "../../../utils/connectMongo";
 import User from "../../../models/User";
 
 dbConnect();
-export const ENC_KEY = 'qrshsqrwdzxmidxczavnlzxxgfyrompjewvieydljozlsetcsngdjbnrixeqcmpncepljuhxlhtobfzyareajmn';
+export const ENC_KEY =
+  "qrshsqrwdzxmidxczavnlzxxgfyrompjewvieydljozlsetcsngdjbnrixeqcmpncepljuhxlhtobfzyareajmn";
 
 const loginInfo = async (req, res) => {
   const { method } = req;
