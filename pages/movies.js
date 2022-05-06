@@ -3,22 +3,17 @@ import {
   Card,
   CardContent,
   CardMedia,
-  Collapse,
   Typography,
   Button,
   CardActionArea,
   CardActions,
   Grid,
-  IconButton,
-  styled,
 } from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import dbConnect from "../lib/dbConnect";
 import Movie from "../models/movie";
 
 /* TODO:
 - Refine styling of MUI cards and grid -- symmetrical etc
-  - Make description collapsible - DOING
   - Set max height for Title text area
 
   Optional:
@@ -31,7 +26,7 @@ import Movie from "../models/movie";
 ---
 DONE:
 - Display description and title from db: - DONE
-  - movie.description - DONE
+  - movie.description - DONE - DELETED
   - movie.title - DONE
 - Import MUI grid - DONE
 - Link cards to correct movie page:
@@ -45,36 +40,23 @@ DONE:
     - unsure if links should be used in some special way when combining Next + MUI per https://mui.com/material-ui/guides/routing/#more-examples
 */
 
-const ExpandMore = styled((props) => {
-  const { expand, ...other } = props;
-  return <IconButton {...other} />;
-})(({ theme, expand }) => ({
-  transform: !expand ? "rotate(0deg)" : "rotate(180deg)",
-  marginLeft: "auto",
-  transition: theme.transitions.create("transform", {
-    duration: theme.transitions.duration.shortest,
-  }),
-}));
-
 export default function MoviesPage({ movies }) {
-  const [expanded, setExpanded] = React.useState(false);
-
-  const handleExpandClick = (index) => {
-    setExpanded(!expanded);
-  };
-
   return (
     <>
       <Grid
         container
         spacing={2}
-        sx={{ maxWidth: "900px", marginLeft: "auto", marginRight: "auto" }}
+        sx={{ maxWidth: "1000px", mx: "auto" }}
       >
         {movies.map((movie) => (
           <div key={movie._id}>
             {/* <Box sx={{ flexGrow: 1 }}> */}
             <Grid item xs={10}>
-              <Card sx={{ maxWidth: 225 }}>
+              <Card 
+              sx={{
+                maxWidth: 225,
+                ':hover': { boxShadow: 20},
+                }}>
                 <CardActionArea
                   href={`/movies/${encodeURIComponent(movie.id)}`}
                 >
@@ -85,30 +67,17 @@ export default function MoviesPage({ movies }) {
                     alt="movie picture"
                   />
                   <CardContent>
-                    <Typography gutterBottom variant="h6" component="div">
+                    <Typography align="center" gutterBottom variant="h6" component="div">
                       {movie.title}
                     </Typography>
-                    <Collapse in={expanded} timeout="auto" unmountOnExit>
-                      <CardContent>
-                        <Typography variant="body2" color="text.secondary">
-                          {movie.description}
-                        </Typography>
-                      </CardContent>
-                    </Collapse>
                   </CardContent>
                 </CardActionArea>
                 <CardActions>
                   <Button size="small" color="primary">
+                    <Typography align="center">
                     Book this movie
+                    </Typography>
                   </Button>
-                  <ExpandMore
-                    expand={expanded}
-                    onClick={handleExpandClick}
-                    aria-expanded={expanded}
-                    aria-label="show more"
-                  >
-                    <ExpandMoreIcon />
-                  </ExpandMore>
                 </CardActions>
               </Card>
             </Grid>
