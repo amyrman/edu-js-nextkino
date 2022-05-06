@@ -13,20 +13,26 @@ const Login = () => {
   const handleSubmit = async (ev) => {
     ev.preventDefault();
 
+    const data = {
+      username,
+      password,
+    };
+
     try {
-      await fetch("/api/users", {
+      const res = await fetch("/api/users", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          username: username,
-          password: password,
-        }),
+        body: JSON.stringify(data),
       });
+      if (res.ok == true) {
+        router.push("/user");
+      } else {
+        alert("Check your login info");
+      }
     } catch {
-    } finally {
-      forSubmit();
+      console.log("Fetch failed", error);
     }
   };
 
