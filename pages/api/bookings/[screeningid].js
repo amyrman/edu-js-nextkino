@@ -3,7 +3,11 @@ import dbConnect from "../../../lib/dbConnect";
 import Screening from "/models/Booking.js";
 
 export default async function handler(req, res) {
-  // await dbConnect();
+  // mongoose.connect(
+  //   ""
+  // );
+
+  await dbConnect();
 
   if (req.method == "PATCH") {
     const booking = req.body;
