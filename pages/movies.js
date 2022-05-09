@@ -34,53 +34,51 @@ const moviesTheme = createTheme({
 
 export default function MoviesPage({ movies }) {
 
-- Questions...
-  - Do changes to _app.js and addition of _document.js pose any risk for merge conflicts?
-    - unsure if links should be used in some special way when combining Next + MUI per https://mui.com/material-ui/guides/routing/#more-examples
-*/
-
-export default function MoviesPage({ movies }) {
   return (
     <ThemeProvider theme={moviesTheme}>
       <Grid
         container
-        spacing={2}
-        sx={{ maxWidth: "1000px", mx: "auto" }}
+        justifyContent="center"
+        sx={{ maxWidth: 1200, mx: "auto", gap: 2, flexGrow: 1 }}
       >
         {movies.map((movie) => (
           <div key={movie._id}>
-            {/* <Box sx={{ flexGrow: 1 }}> */}
-            <Grid item xs={10}>
-              <Card 
-              sx={{
-                maxWidth: 225,
-                ':hover': { boxShadow: 20},
-                }}>
+            <Grid item xs={12} p={2}>
+              <Card
+                sx={{
+                  borderRadius: 2,
+                  width: 225,
+                  ":hover": { boxShadow: 10 },
+                }}
+              >
                 <CardActionArea
                   href={`/movies/${encodeURIComponent(movie.id)}`}
                 >
                   <CardMedia
                     component="img"
-                    height="275"
+                    height="300"
                     image={movie.imgUrl}
                     alt="movie picture"
                   />
                   <CardContent>
-                    <Typography align="center" gutterBottom variant="h6" component="div">
+                    <Typography
+                      sx={{ height: "80px", marginBottom: "0" }}
+                      color="primary"
+                      align="center"
+                      variant="h6"
+                      component="div"
+                    >
                       {movie.title}
                     </Typography>
                   </CardContent>
                 </CardActionArea>
                 <CardActions>
-                  <Button size="small" color="primary">
-                    <Typography align="center">
-                    Book this movie
-                    </Typography>
+                  <Button size="small" color="primary" sx={{flexGrow: 1 }}>
+                    <Typography align="center">Book this movie</Typography>
                   </Button>
                 </CardActions>
               </Card>
             </Grid>
-            {/* </Box> */}
           </div>
         ))}
       </Grid>
