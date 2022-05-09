@@ -8,32 +8,31 @@ import {
   CardActionArea,
   CardActions,
   Grid,
+  ThemeProvider,
+  createTheme,
 } from "@mui/material";
 import dbConnect from "../lib/dbConnect";
 import Movie from "../models/movie";
 
-/* TODO:
-- Refine styling of MUI cards and grid -- symmetrical etc
-  - Set max height for Title text area
+// Create a theme for this component
+const moviesTheme = createTheme({
+  palette: {
+    primary: {
+      main: '#66aca6',
+    },
+    secondary: {
+      main: '#233f3d',
+    },
+    background: {
+      paper: "rgba(0.8)",
+    },
+  },
+  typography: {
+    fontFamily: ['"Playfair Display"'],
+  },
+});
 
-  Optional:
-  - Make cards responsive i.e. 4 per row on mobile
-  - Change font style to correspond with rest of site
-  - Change CardContent bg color to match site
-  - hover effect on cards to stand out
-  - Animate on hover
-  - Link Book to bookings page
----
-DONE:
-- Display description and title from db: - DONE
-  - movie.description - DONE - DELETED
-  - movie.title - DONE
-- Import MUI grid - DONE
-- Link cards to correct movie page:
-  - href={`/movies/${encodeURIComponent(movie.id)} per https://nextjs.org/docs/api-reference/next/link - DONE
-- Refine styling
-  - Center cards and 4 per row -- DONE
-  - Make Title text a bit smaller -- DONE
+export default function MoviesPage({ movies }) {
 
 - Questions...
   - Do changes to _app.js and addition of _document.js pose any risk for merge conflicts?
@@ -42,7 +41,7 @@ DONE:
 
 export default function MoviesPage({ movies }) {
   return (
-    <>
+    <ThemeProvider theme={moviesTheme}>
       <Grid
         container
         spacing={2}
@@ -85,7 +84,7 @@ export default function MoviesPage({ movies }) {
           </div>
         ))}
       </Grid>
-    </>
+    </ThemeProvider>
   );
 }
 
