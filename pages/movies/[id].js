@@ -7,6 +7,8 @@ import Screenings from '../../components/Screenings';
 
 import styles from './moviepage.module.css';
 
+//Possible refactor here for performance. Replace gSSP with conditional, if props (passed from /movies page) render with that data. Else fetch data from dB based on movieId
+
 export const getServerSideProps = async (context) => {
   const movieId = context.query.id;
   await dbConnect();
