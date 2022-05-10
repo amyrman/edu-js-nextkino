@@ -1,9 +1,14 @@
+import Link from 'next/link';
+
 import styles from './Reviews.module.css';
 
 const Reviews = ({ reviews }) => {
   if (reviews.length > 0) {
     return (
       <div className={styles.container}>
+        <Link href={'/movies'}>
+          <a className={styles.backBtn}>Back to movies</a>
+        </Link>
         <h4>Reviews</h4>
         <ul className={styles.reviews}>
           {reviews.map((review) => {
