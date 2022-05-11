@@ -27,17 +27,15 @@ const UserPage = ({ username }) => {
   return (
     <div className="userDiv">
       <h1 style={{ color: "white" }}>You are now in the user page </h1>
-      <h2 className="userWelcom">
+      <h2 className="userWelcomLink">
         Welcome:
-        <a className="welcomeA">{username}</a>
+        <a className="userWelcome">{username}</a>
       </h2>
       <p style={{ color: "white" }}>
         Click here to home page
-        <a className="userLink">
-          <Link href=" /">
-            Click here
-          </Link>
-        </a>
+        <Link href=" /">
+          <a className="userLink"> Click here </a>
+        </Link>
       </p>
     </div>
   );
