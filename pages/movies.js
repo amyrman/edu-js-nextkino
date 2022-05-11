@@ -42,7 +42,7 @@ export default function MoviesPage({ movies }) {
         sx={{ maxWidth: 1200, mx: "auto", gap: 2, flexGrow: 1 }}
       >
         {movies.map((movie) => (
-          <div key={movie._id}>
+          <div key={movie.id}>
             <Grid item xs={12} p={2}>
               <Card
                 sx={{
