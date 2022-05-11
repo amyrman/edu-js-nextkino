@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 import dbConnect from '../../lib/dbConnect';
 import Movie from '../../models/movie';
@@ -38,6 +39,9 @@ const MoviePage = ({ movie }) => {
       <div className={styles.info}>
         <h1 className={styles.title}>{movie.title}</h1>
         <p className={styles.description}>{movie.description}</p>
+        <Link href={'/movies'}>
+          <a className={styles.backBtn}>Back to movies</a>
+        </Link>
       </div>
       <Screenings screenings={movie.screenings} />
     </div>
