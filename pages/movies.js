@@ -73,7 +73,7 @@ export default function MoviesPage({ movies }) {
                   </CardContent>
                 </CardActionArea>
                 <CardActions>
-                  <Button size="small" color="primary" sx={{flexGrow: 1 }}>
+                  <Button href={`/movies/${encodeURIComponent(movie.id)}`} size="small" color="primary" sx={{flexGrow: 1 }}>
                     <Typography align="center">Book this movie</Typography>
                   </Button>
                 </CardActions>
