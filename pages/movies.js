@@ -49,6 +49,7 @@ export default function MoviesPage({ movies }) {
                   borderRadius: 2,
                   width: 225,
                   transition: "0.3s",
+                  border: "1px solid rgba(255, 255, 255, 0.05)",
                   ":hover": { boxShadow: 15, transform: "scale3d(1.06, 1.06, 1)" },
                 }}
               >
