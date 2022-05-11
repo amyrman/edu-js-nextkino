@@ -48,7 +48,8 @@ export default function MoviesPage({ movies }) {
                 sx={{
                   borderRadius: 2,
                   width: 225,
-                  ":hover": { boxShadow: 10 },
+                  transition: "0.3s",
+                  ":hover": { boxShadow: 15, transform: "scale3d(1.06, 1.06, 1)" },
                 }}
               >
                 <CardActionArea
