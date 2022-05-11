@@ -24,7 +24,7 @@ const moviesTheme = createTheme({
       main: '#233f3d',
     },
     background: {
-      paper: "rgba(0.8)",
+      paper: "rgba(102, 172, 166, 0.1)",
     },
   },
   typography: {
