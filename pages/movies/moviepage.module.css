@@ -11,3 +11,16 @@
   padding-left: 1rem;
   width: 50%;
 }
+
+.description {
+  margin-bottom: 5rem;
+}
+
+.backBtn {
+  border: none;
+  border-radius: 4px;
+  background-color: rgb(102, 172, 166);
+  text-align: center;
+  color: white;
+  padding: 0.5rem 2rem;
+}
