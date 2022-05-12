@@ -16,7 +16,7 @@ export default function Home() {
       <h1>About us</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>  
-      <Link href = "about"><a>read more..</a></Link>
+      <Link href = "/about"><a>read more..</a></Link>
     </div>
     <div className={styles.quote}>
       <h1>"No man can win every battle, but no man should fall without a struggle."</h1>
