@@ -1,28 +1,25 @@
-import Head from 'next/head'
-import Footer from '../components/Footer'
-import Navbar from '../components/Navbar'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.css'  
+import Herosection from '../components/Herosection'
+import RecMovies from '../components/RecMovies'
+import Link from 'next/link'
 
 export default function Home() {
   return (
   <div className="HomePage">
     <div className="ImageSlider">
-      <h1>IMAGESLIDER</h1>
+      <Herosection/>
     </div>
     <div className="SelectedMovies">
-      <h1>Movie tip from Kino</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>  
-      <p>EN FILMTILL</p>
+      <RecMovies /> 
     </div>
-    <div className="AboutUsHome">
+    <div className={styles.About}>
       <h1>About us</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>  
-      <a>read more..</a>
+      <Link href = "about"><a>read more..</a></Link>
     </div>
-    <div className="MovieQuote">
-      <h1>MOVIEQUOTE</h1>
+    <div className={styles.quote}>
+      <h1>"No man can win every battle, but no man should fall without a struggle."</h1>
     </div>
   </div>
   )
