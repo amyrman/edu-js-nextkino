@@ -1,0 +1,26 @@
+.container {
+  margin:0;
+  padding: 0;
+  font-size: 1.5rem;
+  width: 300px;
+  height: 300px;
+  position: fixed;
+  right: 30px;
+  top: 40%;
+  background-color: lightgrey;
+  border: 1px solid black;
+}
+
+.container p {
+  margin: 0;
+  padding: 0.2em;
+}
+
+.header {
+  font-weight: bold;
+}
+
+.money {
+  color: salmon;
+  font-weight: bold;
+}
