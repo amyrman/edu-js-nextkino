@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import styles from './Screenings.module.css';
 
 const Screenings = ({ screenings }) => {
@@ -9,8 +11,17 @@ const Screenings = ({ screenings }) => {
           {screenings.map((screening) => {
             return (
               <li className={styles.screening} key={screening.date}>
-                <p className={styles.date}>{screening.date}</p>
-                <p className={styles.time}>{screening.time}</p>
+                <Link
+                  href={{
+                    pathname: '/booking',
+                    query: { screeningId: screening.id },
+                  }}
+                >
+                  <a>
+                    <p className={styles.date}>{screening.date}</p>
+                    <p className={styles.time}>{screening.time}</p>
+                  </a>
+                </Link>
               </li>
             );
           })}

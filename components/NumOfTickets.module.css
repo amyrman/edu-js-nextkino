@@ -1,0 +1,30 @@
+.container {
+  display: block;
+  margin: 0.25rem;
+  padding: 0.25rem;
+}
+
+.tickets {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.tickets > p {
+  font-size: 1.5rem;
+  font-weight:bold;
+  color: salmon;
+  margin: 0;
+}
+.container button {
+  width: 25x;
+  height: 25px;
+  font-weight: bold;
+  padding: 0.2rem;
+  margin: 0.75rem;
+}
+
+.container > p {
+  margin-bottom: 0;
+}

@@ -1,0 +1,8 @@
+.container {
+  position: relative;
+  text-align: center;
+}
+
+.container > h2 {
+  text-align: center;
+}
