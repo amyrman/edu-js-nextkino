@@ -1,5 +1,5 @@
 import styles from '../styles/Home.module.css'  
-import Herosection from './herosection'
+import Herosection from '../components/Herosection'
 import RecMovies from '../components/RecMovies'
 import Link from 'next/link'
 
