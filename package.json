@@ -9,6 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hapi/iron": "^6.0.0",
+    "cookies": "^0.8.0",
+    "dotenv": "^16.0.0",
+    "mongodb": "^4.5.0",
+    "mongoose": "^6.3.1",
     "@emotion/cache": "^11.7.1",
     "@emotion/react": "^11.9.0",
     "@emotion/server": "^11.4.0",
@@ -25,5 +30,21 @@
   "devDependencies": {
     "eslint": "8.13.0",
     "eslint-config-next": "12.1.5"
-  }
+  },
+  "description": "Inside the /lib directory you will find dbConnect.js. Use this to establish a connection to the databse to enable queries with Schemas.",
+  "main": "next.config.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amyrman/TB-NextKino.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amyrman/TB-NextKino/issues"
+  },
+  "homepage": "https://github.com/amyrman/TB-NextKino#readme"
 }

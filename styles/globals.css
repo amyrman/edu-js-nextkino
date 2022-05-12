@@ -69,3 +69,49 @@ footer{
   color: rgb(20, 245, 196);
   text-shadow: 1px 1px 2px rgb(159, 252, 232), 0 0 2em;  
 }
+
+.userDiv{
+  padding: 10px;
+}
+.userWelcom{
+
+  color: white;
+}
+.welcomeA{
+  padding-left: 10px;
+  color: yellow;
+}
+.userLink{
+  
+  padding: 10px;
+  color: brown;
+}
+
+.userDiv a:visited{
+  text-decoration: none;
+  color: brown;
+}
+
+.loginUsername{
+  padding: 5px;
+  font-size: 20px;
+}
+.loginUsername input{
+  position: relative;
+  left: 10px;
+}
+.loginPassword{
+  
+  padding: 20px;
+  font-size: 20px;
+
+}
+.loginPassword input{
+  
+  position: relative;
+  left: 5px;
+}
+
+.loginSubmit{
+  font-size: 15px;
+}
