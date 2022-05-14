@@ -12,7 +12,7 @@ import {
   createTheme,
 } from "@mui/material";
 import dbConnect from "../lib/dbConnect";
-import Movie from "../models/movie";
+import Movie from "../models/Movie";
 
 // Create a theme for this component
 const moviesTheme = createTheme({
