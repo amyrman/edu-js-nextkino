@@ -19,7 +19,7 @@ export default function Home() {
       <Link href = "/about"><a>read more..</a></Link>
     </div>
     <div className={styles.quote}>
-      <h1>"No man can win every battle, but no man should fall without a struggle."</h1>
+      <h1>`&quot;`No man can win every battle, but no man should fall without a struggle.`&quot;`</h1>
     </div>
   </div>
   )
