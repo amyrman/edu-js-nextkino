@@ -1,7 +1,7 @@
 import React from 'react';
 import Slideshow from './Slideshow';
 
-function herosection() {
+function Herosection() {
   return (
     <div>
         <Slideshow/>
@@ -9,4 +9,4 @@ function herosection() {
   )
 }
 
-export default herosection;
+export default Herosection;
